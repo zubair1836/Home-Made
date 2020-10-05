@@ -24,9 +24,7 @@ import com.army.utils.Utils;
 import com.google.android.gms.tasks.TaskExecutors;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseException;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthProvider;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -64,7 +62,6 @@ public class VerifyPhoneActivity extends AppCompatActivity implements GetResult.
     @BindView(R.id.btn_timer)
     TextView btnTimer;
     private String verificationId;
-    private FirebaseAuth mAuth;
     String phonenumber;
     String phonecode;
     CustPrograssbar custPrograssbar;
@@ -84,7 +81,7 @@ public class VerifyPhoneActivity extends AppCompatActivity implements GetResult.
 //        } else {
 //            user = sessionManager.getUserDetails("");
 //        }
-        mAuth = FirebaseAuth.getInstance();
+ //       mAuth = FirebaseAuth.getInstance();
 //        phonenumber = getIntent().getStringExtra("phone");
 //        phonecode = getIntent().getStringExtra("code");
 //        sendVerificationCode(phonecode + phonenumber);
@@ -198,79 +195,79 @@ public class VerifyPhoneActivity extends AppCompatActivity implements GetResult.
     }
 
     private void verifyCode(String code) {
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
-        signInWithCredential(credential);
+//        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
+//        signInWithCredential(credential);
     }
 
-    private void signInWithCredential(PhoneAuthCredential credential) {
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        switch (isvarification) {
-                            case 0:
-//                                Intent intent = new Intent(VerifyPhoneActivity.this, ChanegPasswordActivity.class);
-//                                intent.putExtra("phone", phonenumber);
-//                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                                startActivity(intent);
-                                break;
-                            case 1:
-                                createUser();
-                                break;
-                            case 2:
-                                updateUser();
-                                break;
-                            default:
-                                break;
-                        }
-                    } else {
-                        Toast.makeText(VerifyPhoneActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
-    }
-
-    private void sendVerificationCode(String number) {
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                number,
-                60,
-                TimeUnit.SECONDS,
-                TaskExecutors.MAIN_THREAD,
-                mCallBack
-        );
-    }
-
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
-            mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-        @Override
-        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-            super.onCodeSent(s, forceResendingToken);
-            verificationId = s;
-        }
-
-        @Override
-        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-            String code = phoneAuthCredential.getSmsCode();
-            if (code != null) {
-                edOtp1.setText("" + code.substring(0, 1));
-                edOtp2.setText("" + code.substring(1, 2));
-                edOtp3.setText("" + code.substring(2, 3));
-                edOtp4.setText("" + code.substring(3, 4));
-                edOtp5.setText("" + code.substring(4, 5));
-                edOtp6.setText("" + code.substring(5, 6));
-                verifyCode(code);
-            }
-        }
-        @Override
-        public void onVerificationFailed(FirebaseException e) {
-            User user1 = new User();
-            user1.setId("0");
-            user1.setName("User");
-            user1.setEmail("user@gmail.com");
-            user1.setMobile("+91 8888888888");
-            sessionManager.setUserDetails("", user1);
-            Toast.makeText(VerifyPhoneActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
-            finish();
-        }
-    };
+//    private void signInWithCredential(PhoneAuthCredential credential) {
+//        mAuth.signInWithCredential(credential)
+//                .addOnCompleteListener(task -> {
+//                    if (task.isSuccessful()) {
+//                        switch (isvarification) {
+//                            case 0:
+////                                Intent intent = new Intent(VerifyPhoneActivity.this, ChanegPasswordActivity.class);
+////                                intent.putExtra("phone", phonenumber);
+////                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+////                                startActivity(intent);
+//                                break;
+//                            case 1:
+//                                createUser();
+//                                break;
+//                            case 2:
+//                                updateUser();
+//                                break;
+//                            default:
+//                                break;
+//                        }
+//                    } else {
+//                        Toast.makeText(VerifyPhoneActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
+//                    }
+//                });
+//    }
+//
+//    private void sendVerificationCode(String number) {
+//        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+//                number,
+//                60,
+//                TimeUnit.SECONDS,
+//                TaskExecutors.MAIN_THREAD,
+//                mCallBack
+//        );
+//    }
+//
+//    private PhoneAuthProvider.OnVerificationStateChangedCallbacks
+//            mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+//        @Override
+//        public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+//            super.onCodeSent(s, forceResendingToken);
+//            verificationId = s;
+//        }
+//
+//        @Override
+//        public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+//            String code = phoneAuthCredential.getSmsCode();
+//            if (code != null) {
+//                edOtp1.setText("" + code.substring(0, 1));
+//                edOtp2.setText("" + code.substring(1, 2));
+//                edOtp3.setText("" + code.substring(2, 3));
+//                edOtp4.setText("" + code.substring(3, 4));
+//                edOtp5.setText("" + code.substring(4, 5));
+//                edOtp6.setText("" + code.substring(5, 6));
+//                verifyCode(code);
+//            }
+//        }
+//        @Override
+//        public void onVerificationFailed(FirebaseException e) {
+//            User user1 = new User();
+//            user1.setId("0");
+//            user1.setName("User");
+//            user1.setEmail("user@gmail.com");
+//            user1.setMobile("+91 8888888888");
+//            sessionManager.setUserDetails("", user1);
+//            Toast.makeText(VerifyPhoneActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+//            finish();
+//        }
+//    };
 
     @OnClick({R.id.btn_send, R.id.btn_reenter})
     public void onClick(View view) {
@@ -304,7 +301,7 @@ public class VerifyPhoneActivity extends AppCompatActivity implements GetResult.
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                sendVerificationCode(phonecode + phonenumber);
+                //sendVerificationCode(phonecode + phonenumber);
                 break;
             default:
                 break;
