@@ -1,34 +1,38 @@
 package com.army.activity;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
-import android.widget.TextView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.army.R;
-import com.army.utils.SessionManager;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
-import static com.army.utils.SessionManager.aboutUs;
+public class AboutUsActivity extends Fragment {
 
-public class AboutUsActivity extends BaseActivity {
 
-    @BindView(R.id.txt_about)
-    TextView txtAbout;
-    SessionManager sessionManager;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_abouts);
-        ButterKnife.bind(this);
-        sessionManager=new SessionManager(this);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            txtAbout.setText(Html.fromHtml(sessionManager.getStringData(aboutUs), Html.FROM_HTML_MODE_COMPACT));
-        } else {
-            txtAbout.setText(Html.fromHtml(sessionManager.getStringData(aboutUs)));
-        }
     }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_abouts, container, false);
+
+
+
+        return view;
+    }
+
+
+
 }

@@ -37,21 +37,9 @@
             android:name=".activity.BaseActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-        <activity
-            android:name=".activity.AboutUsActivity"
-            android:label="About"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
-            android:name=".activity.TermsAndConditionActivity"
-            android:label="Terms &amp; Conditions"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
-            android:name=".activity.PrivacyPolicyActivity"
-            android:label="Privacy &amp; Policy"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
+
+
+
 
 
         <activity
@@ -60,11 +48,6 @@
             tools:ignore="LockedOrientationActivity" />
 
 
-        <activity
-            android:name=".activity.ProfileActivity"
-            android:label="My Profile"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
 
 
 

@@ -82,6 +82,8 @@ public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.drawer)
     LinearLayout drawer;
 
+    public static FragmentManager fragmentManager;
+
 
     User user;
 
@@ -115,11 +117,7 @@ public class HomeActivity extends AppCompatActivity {
         //rltCart.setVisibility(View.VISIBLE);
     }
 
-    public void setFrameMargin(int top) {
-        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) lvlMainhome.getLayoutParams();
-        params.setMargins(0, top, 0, 0);
-        lvlMainhome.setLayoutParams(params);
-    }
+
 
 
 
@@ -137,10 +135,9 @@ public class HomeActivity extends AppCompatActivity {
         //Log.e("first", "-->" + first);
         //txtfirstl.setText("" + first);
 
-       // txtMob.setText("" + user.getMobile());
-        //txtEmail.setText("" + user.getEmail());
+        txtMob.setText("Number here");
+        txtEmail.setText("email here" );
 
-        titleChange();
 
         Cursor res = databaseHelper.getAllData();
 
@@ -163,10 +160,13 @@ public class HomeActivity extends AppCompatActivity {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
-            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_frame);
-            if (fragment instanceof HomeFragment && fragment.isVisible()) {
-                finish();
-            }
+//            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_frame);
+//            if (fragment instanceof HomeFragment && fragment.isVisible()) {
+//                finish();
+//            }
+
+            finish();
+
 
 
         }
@@ -183,21 +183,15 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-    public void serchviewShow() {
-        //lvlActionsearch.setVisibility(View.VISIBLE);
-    }
-
     public void titleChange(String s) {
         txtActiontitle.setText(s);
     }
 
-    public void titleChange() {
-        //txtActiontitle.setText("Hello " + user.getName());
-    }
+
 
 
     public void callFragment(Fragment fragmentClass) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment_frame, fragmentClass).addToBackStack("adds").commit();
         drawerLayout.closeDrawer(GravityCompat.START);
     }
@@ -213,22 +207,16 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.img_close:
                 break;
             case R.id.lvl_home:
-                //lvlActionsearch.setVisibility(View.VISIBLE);
-                titleChange();
+                titleChange("Home");
                 fragment = new HomeFragment();
                 callFragment(fragment);
                 break;
             case R.id.myprofile:
-                titleChange();
+                titleChange("Profile");
+                fragment = new ProfileActivity();
+                callFragment(fragment);
 
-                if (sessionManager.getBooleanData(login)) {
-                    startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
-
-                } else {
-                    startActivity(new Intent(HomeActivity.this, LoginActivity.class));
-                }
                 break;
-
 
 
             case R.id.logout:
@@ -246,19 +234,21 @@ public class HomeActivity extends AppCompatActivity {
 
 
             case R.id.about:
-                titleChange();
+                titleChange("About Us");
 
-                startActivity(new Intent(HomeActivity.this, AboutUsActivity.class));
+                fragment = new AboutUsActivity();
+                callFragment(fragment);
                 break;
-            case R.id.privecy:
-                titleChange();
 
-                startActivity(new Intent(HomeActivity.this, PrivacyPolicyActivity.class));
+            case R.id.privecy:
+                titleChange("Privacy Policy");
+                fragment = new PrivacyPolicyActivity();
+                callFragment(fragment);
                 break;
             case R.id.termcondition:
-                titleChange();
-
-                startActivity(new Intent(HomeActivity.this, TermsAndConditionActivity.class));
+                titleChange("Terms and Conditions");
+                fragment = new TermsAndConditionActivity();
+                callFragment(fragment);
                 break;
             default:
                 break;

@@ -1,32 +1,33 @@
 package com.army.activity;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
-import android.widget.TextView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.army.R;
-import com.army.utils.SessionManager;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+public class TermsAndConditionActivity extends Fragment {
 
-import static com.army.utils.SessionManager.tremcodition;
 
-public class TermsAndConditionActivity extends BaseActivity {
-    @BindView(R.id.txt_privacy)
-    TextView txtPrivacy;
-    SessionManager sessionManager;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trams_and_condition);
-        ButterKnife.bind(this);
-        sessionManager = new SessionManager(this);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            txtPrivacy.setText(Html.fromHtml(sessionManager.getStringData(tremcodition), Html.FROM_HTML_MODE_COMPACT));
-        } else {
-            txtPrivacy.setText(Html.fromHtml(sessionManager.getStringData(tremcodition)));
-        }
+
     }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_terms_and_condition, container, false);
+
+
+        return view;
+    }
+
+
 }

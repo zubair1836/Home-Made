@@ -69,7 +69,6 @@ public class HomeFragment extends Fragment {
     private Context mContext;
 
 
-    public HomeFragment homeListFragment;
     SessionManager sessionManager;
     //User user;
 
@@ -103,9 +102,7 @@ public class HomeFragment extends Fragment {
         databaseHelper = new DatabaseHelper(getActivity());
         c=getActivity();
 
-        homeListFragment = this;
 
-        getHome();
 
         prepareListData();
         return view;
@@ -188,16 +185,11 @@ public class HomeFragment extends Fragment {
 
 
 
-    private void getHome() {
-
-    }
 
     @Override
     public void onResume() {
         super.onResume();
-        HomeActivity.getInstance().setdata();
-        HomeActivity.getInstance().setFrameMargin(60);
-        HomeActivity.getInstance().serchviewShow();
+
 
 
     }
