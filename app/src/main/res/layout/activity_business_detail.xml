@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    android:fillViewport="true"
+    tools:context=".activity.BusinessDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:text="Enter your Business details"
+            android:textColor="@color/colorGreyDark"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/dp"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/ic_perm_"
+                app:civ_border_color="@color/colorGreyDark"
+                app:civ_border_width="1dp" />
+
+            <ImageView
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignEnd="@+id/dp"
+                android:layout_alignBottom="@+id/dp"
+                android:src="@drawable/ic_add"
+                android:background="@drawable/rounded_green2"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/ed_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_editetext"
+                android:drawableLeft="@drawable/ic_business"
+                android:inputType="textCapWords"
+                android:drawablePadding="10dp"
+                android:hint="Business Name"
+                android:padding="12dp"
+                android:textColor="@color/colorGreyDark"
+                android:textColorHint="@color/colorGreyLight" />
+
+
+            <EditText
+                android:layout_marginTop="15dp"
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_editetext"
+                android:drawableLeft="@drawable/ic_description"
+                android:drawablePadding="10dp"
+                android:inputType="textCapSentences"
+                android:hint="Business Description"
+                android:padding="12dp"
+                android:textColor="@color/colorGreyDark"
+                android:textColorHint="@color/colorGreyLight" />
+
+
+            <EditText
+                android:layout_marginTop="15dp"
+                android:id="@+id/ed_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_editetext"
+                android:drawableLeft="@drawable/ic_map"
+                android:drawablePadding="10dp"
+                android:hint="Business Address"
+                android:padding="12dp"
+                android:textColor="@color/colorGreyDark"
+                android:textColorHint="@color/colorGreyLight" />
+
+
+            <EditText
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_editetext"
+                android:drawableLeft="@drawable/ic_time"
+                android:drawablePadding="10dp"
+                android:hint="Opening Time"
+                android:focusable="false"
+                android:padding="12dp"
+                android:textColor="@color/colorGreyDark"
+                android:textColorHint="@color/colorGreyLight" />
+
+
+            <EditText
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_editetext"
+                android:drawableLeft="@drawable/ic_time"
+                android:focusable="false"
+                android:drawablePadding="10dp"
+                android:hint="Closing Time"
+                android:padding="12dp"
+                android:textColor="@color/colorGreyDark"
+                android:textColorHint="@color/colorGreyLight" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_green2"
+                android:elevation="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:onClick="ShowPaswrdDG"
+                    android:id="@+id/btn_sign"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_green2"
+                    android:gravity="center"
+                    android:text="Save"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

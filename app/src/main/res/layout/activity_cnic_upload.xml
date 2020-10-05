@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+
+    tools:context=".activity.CNIC_Upload">
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_below="@+id/cnic_front"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            android:text="Please Upload Front and \n Back photo of your CNIC"
+            android:textColor="@color/colorGreyDark"
+            android:textSize="21dp"
+            android:fontFamily="@font/coresans_cr_medium"
+            />
+
+
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+
+            <ImageView
+                android:id="@+id/cnic_front"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_cnic_front" />
+
+            <ImageView
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignEnd="@+id/cnic_front"
+                android:layout_alignBottom="@+id/cnic_front"
+                android:src="@drawable/ic_add"
+                android:background="@drawable/rounded_green2"
+                />
+
+
+            <TextView
+                android:id="@+id/belowTxt1"
+                android:layout_below="@+id/cnic_front"
+                android:layout_marginStart="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Front Photo"
+                android:textColor="@color/colorBlack"
+                android:textSize="21dp"
+                android:fontFamily="@font/coresans_cr_medium"
+                />
+
+
+            <ImageView
+                android:layout_toEndOf="@+id/cnic_front"
+                android:id="@+id/cnic_back"
+                android:layout_marginStart="20dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_cnic_back" />
+
+            <ImageView
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignEnd="@+id/cnic_back"
+                android:layout_alignBottom="@+id/cnic_back"
+                android:src="@drawable/ic_add"
+                android:background="@drawable/rounded_green2"
+                />
+
+
+            <TextView
+
+                android:layout_toEndOf="@+id/belowTxt1"
+                android:layout_below="@+id/cnic_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:layout_marginStart="50dp"
+                android:text="Back Photo"
+                android:textColor="@color/colorBlack"
+                android:textSize="21dp"
+                android:fontFamily="@font/coresans_cr_medium"
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+            <TextView
+
+                android:onClick="UploadCnic"
+                android:id="@+id/btn_cnic_upload"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rounded_green2"
+                android:elevation="10dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:text="Upload"
+                android:textColor="@color/colorBlack" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+    </LinearLayout>
+
+
+</ScrollView>
