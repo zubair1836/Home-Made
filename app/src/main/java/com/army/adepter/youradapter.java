@@ -59,11 +59,11 @@ public class youradapter extends BaseAdapter {
 
         TextView hdr = (TextView) vi.findViewById(R.id.headerr);
 
-        hdr.setText(Prices.get(position));
+        hdr.setText(ItemNames.get(position));
 
-        TextView text = (TextView) vi.findViewById(R.id.text);
+        TextView price = (TextView) vi.findViewById(R.id.text);
 
-        text.setText(ItemNames.get(position));
+        price.setText(Prices.get(position));
         return vi;
     }
 }
