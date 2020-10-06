@@ -7,11 +7,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.army.R;
 
 import java.util.ArrayList;
 
-public class youradapter extends BaseAdapter {
+public class ItemsAdapter extends BaseAdapter{
 
     Context context;
 
@@ -21,7 +23,7 @@ public class youradapter extends BaseAdapter {
 
     private static LayoutInflater inflater = null;
 
-    public youradapter(Context context, ArrayList<String> itemNames, ArrayList<String> Prices) {
+    public ItemsAdapter(Context context, ArrayList<String> itemNames, ArrayList<String> Prices) {
         // TODO Auto-generated constructor stub
         this.context = context;
 
@@ -64,6 +66,9 @@ public class youradapter extends BaseAdapter {
         TextView price = (TextView) vi.findViewById(R.id.text);
 
         price.setText(Prices.get(position));
+
+
+
         return vi;
     }
 }

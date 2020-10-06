@@ -37,5 +37,23 @@
             android:layout_height="wrap_content" />
 
 
+        <TextView
+            android:id="@+id/time"
+
+
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:padding="10dp"
+            android:text="Availability: 12am to 4pm"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+
+
 
 </RelativeLayout>

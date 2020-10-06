@@ -9,8 +9,6 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
-
-
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,6 +18,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.AddMealActivity"></activity>
+        <activity
+            android:name=".activity.AddItemActivity"
+            android:label="Add Item" />
         <activity
             android:name=".activity.BusinessDetailActivity"
             android:screenOrientation="portrait"
@@ -30,27 +32,14 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2"
             tools:ignore="LockedOrientationActivity" />
-
-
-
         <activity
             android:name=".activity.BaseActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-
-
-
-
-
         <activity
             android:name=".activity.CoupunActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-
-
-
-
-
         <activity
             android:name=".activity.HomeActivity"
             android:label="@string/title_activity_home"
@@ -79,8 +68,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".activity.VerifyPhoneActivity"
             android:screenOrientation="portrait"

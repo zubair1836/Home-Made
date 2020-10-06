@@ -1,10 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".fragment.ProfileFragment">
 
 
-</ScrollView>
+    <TextView
+        android:id="@+id/namedum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Name:" />
+
+    <TextView
+        android:id="@+id/namefromsv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:text="get from server" />
+
+
+
+    <TextView
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/namedum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone:"
+        />
+
+    <TextView
+        android:layout_below="@+id/namefromsv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignStart="@+id/namefromsv"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12345456"
+        />
+
+
+    <View
+        android:id="@+id/centreLine"
+        android:layout_below="@+id/namedum"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBlack"
+
+        />
+
+
+
+
+    <TextView
+        android:layout_below="@id/centreLine"
+        android:id="@+id/businesdum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Business Name:" />
+
+    <TextView
+        android:layout_alignBaseline="@+id/businesdum"
+        android:id="@+id/busniesnamefromsv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:text="get from server" />
+
+
+
+    <TextView
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/businesdum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Business Address:"
+        />
+
+    <TextView
+        android:layout_below="@+id/busniesnamefromsv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_alignStart="@+id/namefromsv"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="xyz, Grw"
+        />
+
+
+</RelativeLayout>
