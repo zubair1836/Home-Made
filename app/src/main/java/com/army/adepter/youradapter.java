@@ -15,15 +15,18 @@ public class youradapter extends BaseAdapter {
 
     Context context;
 
-    ArrayList<String> NAMESs;
+    ArrayList<String> ItemNames;
+    ArrayList<String> Prices;
+
 
     private static LayoutInflater inflater = null;
 
-    public youradapter(Context context, ArrayList<String> NAMES) {
+    public youradapter(Context context, ArrayList<String> itemNames, ArrayList<String> Prices) {
         // TODO Auto-generated constructor stub
         this.context = context;
 
-        this.NAMESs=NAMES;
+        this.ItemNames =itemNames;
+        this.Prices=Prices;
 
         inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -32,13 +35,13 @@ public class youradapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return NAMESs.size();
+        return ItemNames.size();
     }
 
     @Override
     public Object getItem(int position) {
         // TODO Auto-generated method stub
-        return NAMESs.get(position);
+        return ItemNames.get(position);
     }
 
     @Override
@@ -56,12 +59,11 @@ public class youradapter extends BaseAdapter {
 
         TextView hdr = (TextView) vi.findViewById(R.id.headerr);
 
-        //hdr.setText(data2[position]);
-
+        hdr.setText(Prices.get(position));
 
         TextView text = (TextView) vi.findViewById(R.id.text);
 
-        text.setText(NAMESs.get(position));
+        text.setText(ItemNames.get(position));
         return vi;
     }
 }

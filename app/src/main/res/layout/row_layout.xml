@@ -7,6 +7,7 @@
 
 
         <TextView
+            android:padding="10dp"
             android:layout_marginTop="3dp"
             android:layout_marginStart="10dp"
             android:layout_alignParentStart="true"
@@ -14,10 +15,13 @@
             android:id="@+id/headerr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
             android:text="Header" />
 
         <TextView
+            android:padding="10dp"
             android:layout_marginEnd="10dp"
 
             android:layout_marginTop="3dp"
@@ -25,6 +29,7 @@
             android:layout_alignParentEnd="true"
             android:textSize="18sp"
             android:layout_gravity="end"
+            android:textColor="@color/colorBlack"
             android:gravity="end"
             android:text="footer"
             android:id="@+id/text"
