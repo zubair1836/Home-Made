@@ -1,4 +1,4 @@
-package com.army.activity;
+package com.army.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import com.army.R;
 import com.army.retrofit.GetResult;
 
-public class PrivacyPolicyActivity extends Fragment {
+public class PrivacyPolicyFragment extends Fragment {
 
 
 

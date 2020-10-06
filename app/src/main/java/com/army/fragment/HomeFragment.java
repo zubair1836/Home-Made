@@ -1,57 +1,31 @@
 package com.army.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.PagerAdapter;
 
 import com.army.adepter.ExpandableListAdapter;
 import com.army.R;
-import com.army.activity.HomeActivity;
 
 import com.army.database.DatabaseHelper;
-import com.army.model.BannerItem;
-import com.army.model.CatItem;
-import com.army.model.DynamicData;
-import com.army.model.Home;
-import com.army.model.ProductItem;
-import com.army.retrofit.APIClient;
-import com.army.retrofit.GetResult;
 import com.army.utils.SessionManager;
-import com.google.android.material.tabs.TabLayout;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.json.JSONObject;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
-import retrofit2.Call;
 
-
+import static com.army.activity.HomeActivity.fragmentManager;
+import static com.army.activity.HomeActivity.topLyt;
 
 
 public class HomeFragment extends Fragment {
@@ -64,6 +38,8 @@ public class HomeFragment extends Fragment {
 
     @BindView(R.id.lvExp)
     ExpandableListView expListView;
+
+
 
 
     private Context mContext;
@@ -102,6 +78,16 @@ public class HomeFragment extends Fragment {
         databaseHelper = new DatabaseHelper(getActivity());
         c=getActivity();
 
+
+        FloatingActionButton fab=view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment=new ItemsFragment();
+                topLyt.setVisibility(View.VISIBLE);
+                fragmentManager.beginTransaction().replace(R.id.fragment_frame, fragment).addToBackStack("adds").commit();
+            }
+        });
 
 
         prepareListData();

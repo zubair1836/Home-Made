@@ -61,7 +61,36 @@
             android:fillViewport="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:context=".activity.HomeActivity"
-            tools:showIn="@layout/app_bar_home">
+            tools:showIn="@layout/app_bar_home"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/topLayout"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:onClick="ShowItemsFrag"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Items"
+                    />
+
+                <Button
+                    android:onClick="showMealsFrag"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meals"
+                    />
+
+
+            </LinearLayout>
 
             <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/fragment_frame"

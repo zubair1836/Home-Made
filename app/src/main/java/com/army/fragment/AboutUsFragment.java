@@ -1,6 +1,7 @@
-package com.army.activity;
+package com.army.fragment;
 
 import android.os.Bundle;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,8 @@ import androidx.fragment.app.Fragment;
 
 import com.army.R;
 
-public class ProfileActivity extends Fragment {
 
+public class AboutUsFragment extends Fragment {
 
 
 
@@ -25,7 +26,8 @@ public class ProfileActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.activity_abouts, container, false);
+
 
 
         return view;
