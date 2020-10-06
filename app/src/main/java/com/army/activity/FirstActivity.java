@@ -19,7 +19,7 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
         int SPLASH_TIME_OUT = 1;
-        //int SPLASH_TIME_OUT = 2000;
+        //int SPLASH_TIME_OUT = 1000;
 
         new Handler().postDelayed(() -> {
 

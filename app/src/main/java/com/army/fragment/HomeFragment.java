@@ -25,6 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 import static com.army.activity.HomeActivity.fragmentManager;
+import static com.army.activity.HomeActivity.titleChange;
 import static com.army.activity.HomeActivity.topLyt;
 
 
@@ -80,13 +81,11 @@ public class HomeFragment extends Fragment {
 
 
         FloatingActionButton fab=view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Fragment fragment=new ItemsFragment();
-                topLyt.setVisibility(View.VISIBLE);
-                fragmentManager.beginTransaction().replace(R.id.fragment_frame, fragment).addToBackStack("adds").commit();
-            }
+        fab.setOnClickListener(view1 -> {
+            Fragment fragment=new ItemsFragment();
+            titleChange("Menu");
+            topLyt.setVisibility(View.VISIBLE);
+            fragmentManager.beginTransaction().replace(R.id.fragment_frame, fragment).addToBackStack("adds").commit();
         });
 
 

@@ -40,7 +40,7 @@
                         android:padding="5dp"
                         android:text="Home"
                         android:textColor="@color/colorBlack"
-                        android:textSize="18dp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
 
@@ -66,14 +66,17 @@
             >
 
             <LinearLayout
-                android:id="@+id/topLayout"
+                android:layout_marginTop="3dp"
                 android:visibility="gone"
+                android:id="@+id/topLayout"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
                 <Button
+                    android:background="@drawable/rounded_btn_filled"
+                    android:id="@+id/btnItems"
                     android:onClick="ShowItemsFrag"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
@@ -82,6 +85,8 @@
                     />
 
                 <Button
+                    android:background="@drawable/rounded_editetext"
+                    android:id="@+id/btnMeals"
                     android:onClick="showMealsFrag"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
