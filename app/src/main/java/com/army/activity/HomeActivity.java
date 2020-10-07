@@ -1,6 +1,7 @@
 package com.army.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -93,6 +94,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public static FragmentManager fragmentManager;
     public static TextView txtActiontitle;
+    public static Context c;
 
 
     User user;
@@ -120,9 +122,12 @@ public class HomeActivity extends AppCompatActivity {
         homeActivity = this;
         setDrawer();
 
+        c=getApplicationContext();
         topLyt = findViewById(R.id.topLayout);
         txtActiontitle = findViewById(R.id.txt_actiontitle);
         fragmentManager = getSupportFragmentManager();
+
+
 
     }
 
